@@ -64,4 +64,22 @@ done
 time nice -n -20 su -c "dd if=/dev/zero of=/tmp/test.img bs=1M count=4096" &  time nice -n 19 su -c "dd if=/dev/zero of=/tmp/test2.img bs=1M count=4096" &
 
 ```
-*запускать нужно от sudo*
+*запускать нужно из под рута, чтобы была возможность менять найс процесса*
+```
+root@LaptopAll:/home/igels/hw10# ./tpnice.sh
+root@LaptopAll:/home/igels/hw10# 4096+0 записей получено
+4096+0 записей отправлено
+4294967296 байт (4,3 GB, 4,0 GiB) скопирован, 54,5651 s, 78,7 MB/s
+
+real	0m54,775s
+user	0m0,001s
+sys	0m6,056s
+4096+0 записей получено
+4096+0 записей отправлено
+4294967296 байт (4,3 GB, 4,0 GiB) скопирован, 56,3608 s, 76,2 MB/s
+
+real	0m56,574s
+user	0m0,013s
+sys	0m6,144s
+
+```
